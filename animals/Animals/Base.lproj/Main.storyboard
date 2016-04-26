@@ -86,7 +86,7 @@
                     <navigationItem key="navigationItem" id="cqZ-Ez-Py9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aMu-ih-4dr">
                             <connections>
-                                <segue destination="P5e-ir-emx" kind="presentation" id="WvX-Po-NAU"/>
+                                <action selector="AddButtonPressed:" destination="crb-zd-a9F" id="Po4-S9-4px"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Zs-Hp-4fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1725.5" y="303.5"/>
+            <point key="canvasLocation" x="1708.5" y="303.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NYr-zg-ZSk">
@@ -162,8 +162,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ed8-Qc-4f9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P5e-ir-emx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddAnimalViewController" automaticallyAdjustsScrollViewInsets="NO" id="P5e-ir-emx" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xba-5W-kkc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -175,7 +176,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJc-nx-snv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1252.5" y="303.5"/>
+            <point key="canvasLocation" x="1236.5" y="303.5"/>
         </scene>
     </scenes>
     <resources>

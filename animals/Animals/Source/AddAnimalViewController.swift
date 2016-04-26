@@ -1,5 +1,9 @@
 //  Copyright © 2016 HB. All rights reserved.
 
+protocol AddAnimal {
+  func add(animal: Animal?)
+}
+
 class AddAnimalViewController: UIViewController,
 UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -8,6 +12,9 @@ UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
   @IBOutlet weak var categoryPickerView: UIPickerView!
 
   var animal: Animal?
+  let categories = ["Cat", "Dog", "Reptile", "Bird"]
+
+  var delegate: AddAnimal?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,6 +30,8 @@ UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
   @IBAction func doneButtonPressed(sender: AnyObject) {
     animal?.name = nameTextField.text
     animal?.location = locationTextField.text
+
+    delegate?.add(animal)
 
     self.dismissViewControllerAnimated(true, completion: nil)
   }
@@ -41,7 +50,7 @@ UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
   }
 
   func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return 1
+    return categories.count
   }
 
   // MARK: - PickerView Delegate
@@ -50,14 +59,14 @@ UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     pickerView: UIPickerView,
     titleForRow row: Int,
     forComponent component: Int) -> String? {
-    return "Cat"
+    return categories[row]
   }
 
   func pickerView(
     pickerView: UIPickerView,
     didSelectRow row: Int,
     inComponent component: Int) {
-    animal?.category = "Cat"
+    animal?.category = categories[row]
   }
 }
 

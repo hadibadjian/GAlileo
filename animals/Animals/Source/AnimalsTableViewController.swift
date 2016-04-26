@@ -1,12 +1,25 @@
 //  Copyright © 2016 HB. All rights reserved.
 
-class AnimalsTableViewController: UITableViewController {
+class AnimalsTableViewController: UITableViewController, AddAnimal {
+
+  var animals: [Animal] = []
 
   // MARK: - UIViewController LifeCycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Animals"
+  }
+
+  @IBAction func AddButtonPressed(sender: AnyObject) {
+    let navController =
+    storyboard?.instantiateViewControllerWithIdentifier("AddAnimalViewController")
+    if let navController = navController as? UINavigationController {
+      if let viewCont = navController.viewControllers.first as? AddAnimalViewController {
+        viewCont.delegate = self
+      }
+      presentViewController(navController, animated: true, completion: nil)
+    }
   }
 
   // MARK: - UITableViewDelegate
@@ -24,8 +37,10 @@ class AnimalsTableViewController: UITableViewController {
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCellWithIdentifier("AnimalsTableViewCellReuseIdentifier")
 
+      let animal = animals[indexPath.row]
       if let cell = cell as? AnimalsTableViewCell {
-        cell.nameLabel.text = "Cheetah"
+        cell.nameLabel.text = animal.name
+        cell.locationLabel.text = animal.location
       }
 
       return cell!
@@ -44,7 +59,16 @@ class AnimalsTableViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    return animals.count
+  }
+
+  // MARK: AddAnimal
+
+  func add(animal: Animal?) {
+    guard animal != nil else { return }
+
+    animals.append(animal!)
+    tableView.reloadData()
   }
 }
 
