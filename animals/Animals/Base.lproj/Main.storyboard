@@ -83,11 +83,62 @@
                             <outlet property="delegate" destination="crb-zd-a9F" id="fln-Mc-8e8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cqZ-Ez-Py9"/>
+                    <navigationItem key="navigationItem" id="cqZ-Ez-Py9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aMu-ih-4dr">
+                            <connections>
+                                <segue destination="P5e-ir-emx" kind="presentation" id="WvX-Po-NAU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkI-Jx-lbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766.5" y="303.5"/>
+        </scene>
+        <!--Add Animal View Controller-->
+        <scene sceneID="S3o-yE-Qsg">
+            <objects>
+                <viewController id="MEg-H3-TLF" customClass="AddAnimalViewController" customModule="Animals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tiK-z0-fOx"/>
+                        <viewControllerLayoutGuide type="bottom" id="XDg-6a-fhV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RDs-E0-6VM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-d0-ooU">
+                                <rect key="frame" x="20" y="72" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNV-UG-Lzs">
+                                <rect key="frame" x="20" y="110" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wt0-b6-WkA">
+                                <rect key="frame" x="20" y="148" width="335" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QJr-R5-moW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xel-Mp-hqs">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="MEg-H3-TLF" id="gqe-sb-WEv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="categoryPickerView" destination="Wt0-b6-WkA" id="Rx2-GZ-xR9"/>
+                        <outlet property="locationTextField" destination="fNV-UG-Lzs" id="SEv-Ea-4ff"/>
+                        <outlet property="nameTextField" destination="Gev-d0-ooU" id="Lxc-CE-yrS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zs-Hp-4fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725.5" y="303.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NYr-zg-ZSk">
@@ -107,6 +158,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1z-zM-vNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="299.5" y="303.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ed8-Qc-4f9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P5e-ir-emx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xba-5W-kkc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MEg-H3-TLF" kind="relationship" relationship="rootViewController" id="PnY-pF-1wp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJc-nx-snv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252.5" y="303.5"/>
         </scene>
     </scenes>
     <resources>

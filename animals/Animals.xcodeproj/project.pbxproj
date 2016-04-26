@@ -13,6 +13,8 @@
 		27BE5F731CCF97BE008EB95E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BE5F711CCF97BE008EB95E /* LaunchScreen.storyboard */; };
 		27DE53F91CCFC80D00B2FB9D /* AnimalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DE53F81CCFC80D00B2FB9D /* AnimalsTableViewController.swift */; };
 		27DE53FB1CCFCF4C00B2FB9D /* AnimalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DE53FA1CCFCF4C00B2FB9D /* AnimalsTableViewCell.swift */; };
+		27EDC4C01CCFD926004F3F78 /* AddAnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDC4BF1CCFD926004F3F78 /* AddAnimalViewController.swift */; };
+		27EDC4C21CCFDBE6004F3F78 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDC4C11CCFDBE6004F3F78 /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		27BE5F741CCF97BE008EB95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27DE53F81CCFC80D00B2FB9D /* AnimalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimalsTableViewController.swift; path = Source/AnimalsTableViewController.swift; sourceTree = "<group>"; };
 		27DE53FA1CCFCF4C00B2FB9D /* AnimalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsTableViewCell.swift; sourceTree = "<group>"; };
+		27EDC4BF1CCFD926004F3F78 /* AddAnimalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddAnimalViewController.swift; path = Source/AddAnimalViewController.swift; sourceTree = "<group>"; };
+		27EDC4C11CCFDBE6004F3F78 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animal.swift; path = Source/Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 			children = (
 				27DE53F81CCFC80D00B2FB9D /* AnimalsTableViewController.swift */,
 				27DE53FA1CCFCF4C00B2FB9D /* AnimalsTableViewCell.swift */,
+				27EDC4BF1CCFD926004F3F78 /* AddAnimalViewController.swift */,
+				27EDC4C11CCFDBE6004F3F78 /* Animal.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -166,7 +172,9 @@
 			files = (
 				27DE53FB1CCFCF4C00B2FB9D /* AnimalsTableViewCell.swift in Sources */,
 				27DE53F91CCFC80D00B2FB9D /* AnimalsTableViewController.swift in Sources */,
+				27EDC4C01CCFD926004F3F78 /* AddAnimalViewController.swift in Sources */,
 				27BE5F691CCF97BE008EB95E /* AppDelegate.swift in Sources */,
+				27EDC4C21CCFDBE6004F3F78 /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
