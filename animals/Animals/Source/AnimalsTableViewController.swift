@@ -6,26 +6,36 @@ class AnimalsTableViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // TODO: Add navigation title
+    title = "Animals"
   }
 
   // MARK: - UITableViewDelegate
 
-  // TODO: Add section title
+  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return "Cats"
+  }
 
-  // TODO: Add section footer
+  override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    return nil
+  }
 
   override func tableView(
     tableView: UITableView,
     cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCellWithIdentifier("AnimalsTableViewCellReuseIdentifier")
 
-      // TODO: Modify cell related properties
+      if let cell = cell as? AnimalsTableViewCell {
+        cell.nameLabel.text = "Cheetah"
+      }
 
       return cell!
   }
 
-  // TODO: Deselect row after selection
+  override func tableView(
+    tableView: UITableView,
+    didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  }
 
   // MARK: - UITableViewDataSource
 
