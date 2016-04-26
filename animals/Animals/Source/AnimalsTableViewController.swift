@@ -41,6 +41,21 @@ class AnimalsTableViewController: UITableViewController, AddAnimal {
       if let cell = cell as? AnimalsTableViewCell {
         cell.nameLabel.text = animal.name
         cell.locationLabel.text = animal.location
+
+        if let category = animal.category {
+          switch category {
+          case "Cat":
+            cell.iconView.image = UIImage(named: "cat")
+          case "Dog":
+            cell.iconView.image = UIImage(named: "dog")
+          case "Reptile":
+            cell.iconView.image = UIImage(named: "reptile")
+          case "Bird":
+            cell.iconView.image = UIImage(named: "bird")
+          default:
+            cell.iconView.image = nil
+          }
+        }
       }
 
       return cell!

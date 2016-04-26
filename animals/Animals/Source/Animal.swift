@@ -1,6 +1,6 @@
 //  Copyright © 2016 HB. All rights reserved.
 
-class Animal {
+struct Animal {
   var name: String?
   var location: String?
   var category: String?
