@@ -6,16 +6,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Cats Table View Controller-->
+        <!--Animals Table View Controller-->
         <scene sceneID="dwx-bR-4qN">
             <objects>
-                <tableViewController id="crb-zd-a9F" customClass="CatsTableViewController" customModule="Cats" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="crb-zd-a9F" customClass="AnimalsTableViewController" customModule="Animals" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" id="CXO-q6-mza">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="uNx-9R-CsT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnimalsTableViewCellReuseIdentifier" rowHeight="87" id="uNx-9R-CsT" customClass="AnimalsTableViewCell" customModule="Animals" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uNx-9R-CsT" id="5N9-gx-zSt">
@@ -71,6 +71,11 @@
                                         <constraint firstItem="XCO-gg-UWu" firstAttribute="leading" secondItem="5N9-gx-zSt" secondAttribute="leadingMargin" id="wbO-YT-4PR"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="x7z-Gk-Vu3" id="FRg-vM-enK"/>
+                                    <outlet property="locationLabel" destination="JOI-qq-37b" id="rCk-f4-V3g"/>
+                                    <outlet property="nameLabel" destination="AFj-TL-xA7" id="t4b-zr-Q6o"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
