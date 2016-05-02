@@ -6,8 +6,39 @@ class MainTableViewController: UITableViewController {
   let addTableViewCellId = "AddReminderTableViewCell"
   let reminderViewControllerId = "ReminderViewController"
 
-  // Mark: UITableView Delegate & DataSource
-  // TODO: write down minimum UITableView Delegate & DateSource functionalities
+  override func tableView(
+    tableView: UITableView,
+    numberOfRowsInSection section: Int) -> Int {
+      return 2
+  }
+
+  override func tableView(
+    tableView: UITableView,
+    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+      let cell: UITableViewCell?
+
+      switch indexPath.row {
+      case 0:
+        cell = tableView.dequeueReusableCellWithIdentifier(menuTableViewCellId)
+
+        if let cell = cell {
+          cell.textLabel?.text = "John"
+          cell.detailTextLabel?.text = "Doe"
+        }
+      case 1:
+        cell = tableView.dequeueReusableCellWithIdentifier(addTableViewCellId)
+      default:
+        cell = nil
+      }
+
+      return cell!
+  }
+
+  override func tableView(
+    tableView: UITableView,
+    didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  }
 
 }
 
