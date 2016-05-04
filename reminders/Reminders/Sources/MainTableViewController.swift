@@ -1,10 +1,12 @@
 //  Copyright © 2016 HB. All rights reserved.
 
-class MainTableViewController: UITableViewController, AddReminderDelegate {
+class MainTableViewController: UITableViewController {
 
   let menuTableViewCellId = "MenuTableViewCell"
   let addTableViewCellId = "AddReminderTableViewCell"
   let reminderViewControllerId = "ReminderViewController"
+
+  var reminderStorage: AddReminderStorage = AddReminderStorage()
 
   override func tableView(
     tableView: UITableView,
@@ -53,14 +55,8 @@ class MainTableViewController: UITableViewController, AddReminderDelegate {
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if let viewController = segue.destinationViewController as? ModalReminderViewController {
-      viewController.delegate = self
+      viewController.delegate = reminderStorage
     }
-  }
-
-  // MARK: - AddReminderDelegate
-
-  func didReceiveReminder(reminder: Reminder) {
-    print(reminder.title)
   }
 
 }
