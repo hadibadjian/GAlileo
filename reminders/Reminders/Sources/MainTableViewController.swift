@@ -1,6 +1,6 @@
 //  Copyright © 2016 HB. All rights reserved.
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController, AddReminderDelegate {
 
   let menuTableViewCellId = "MenuTableViewCell"
   let addTableViewCellId = "AddReminderTableViewCell"
@@ -37,7 +37,30 @@ class MainTableViewController: UITableViewController {
   override func tableView(
     tableView: UITableView,
     didSelectRowAtIndexPath indexPath: NSIndexPath) {
+/*
+      if indexPath.row == 1 {
+        let viewController = storyboard?.instantiateViewControllerWithIdentifier("ReminderViewController")
+        if let viewController = viewController as? ModalReminderViewController {
+          viewController.delegate = self
+
+          presentViewController(viewController, animated: true, completion: nil)
+        }
+      }
+*/
+
       tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  }
+
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if let viewController = segue.destinationViewController as? ModalReminderViewController {
+      viewController.delegate = self
+    }
+  }
+
+  // MARK: - AddReminderDelegate
+
+  func didReceiveReminder(reminder: Reminder) {
+    print(reminder.title)
   }
 
 }
