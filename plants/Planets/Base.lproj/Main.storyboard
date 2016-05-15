@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,11 +19,115 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d5Q-Fq-hc9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="146" id="k88-5v-u34">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="146"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k88-5v-u34" id="3H1-Ic-Z9T">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="145.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth" translatesAutoresizingMaskIntoConstraints="NO" id="497-5a-Loq" userLabel="Icon">
+                                                    <rect key="frame" x="301" y="8" width="291" height="129.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxT-tw-9f3" userLabel="Title">
+                                                    <rect key="frame" x="8" y="8" width="285" height="32.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNw-4D-5i1" userLabel="Description">
+                                                    <rect key="frame" x="8" y="48.5" width="285" height="89"/>
+                                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JNw-4D-5i1" firstAttribute="top" secondItem="fxT-tw-9f3" secondAttribute="bottom" constant="8" id="5lh-NH-7e3"/>
+                                                <constraint firstItem="497-5a-Loq" firstAttribute="width" secondItem="3H1-Ic-Z9T" secondAttribute="height" multiplier="2:1" id="7kG-qk-ZvT"/>
+                                                <constraint firstItem="JNw-4D-5i1" firstAttribute="bottom" secondItem="497-5a-Loq" secondAttribute="bottom" id="H3Q-yG-9Vy"/>
+                                                <constraint firstItem="497-5a-Loq" firstAttribute="leading" secondItem="fxT-tw-9f3" secondAttribute="trailing" constant="8" id="Qkq-bK-JXa"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="fxT-tw-9f3" secondAttribute="leading" id="ZIY-W6-IEc"/>
+                                                <constraint firstItem="497-5a-Loq" firstAttribute="trailing" secondItem="3H1-Ic-Z9T" secondAttribute="trailingMargin" id="aKD-Vv-kTv"/>
+                                                <constraint firstItem="497-5a-Loq" firstAttribute="leading" secondItem="JNw-4D-5i1" secondAttribute="trailing" constant="8" id="bmW-it-g5Z"/>
+                                                <constraint firstItem="fxT-tw-9f3" firstAttribute="top" secondItem="497-5a-Loq" secondAttribute="top" id="dfm-Pe-KsD"/>
+                                                <constraint firstItem="497-5a-Loq" firstAttribute="top" secondItem="3H1-Ic-Z9T" secondAttribute="topMargin" id="kjU-tC-ZyC"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="JNw-4D-5i1" secondAttribute="leading" id="mZ5-Gs-dfU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="497-5a-Loq" secondAttribute="bottom" id="tVI-xk-Usf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Ws3-9s-nP7">
+                                        <rect key="frame" x="0.0" y="174" width="600" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ws3-9s-nP7" id="5WN-OP-93K">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth" translatesAutoresizingMaskIntoConstraints="NO" id="L02-fS-AH7" userLabel="Icon">
+                                                    <rect key="frame" x="8" y="8" width="60" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="76E-ab-gsR"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxz-cB-rd1" userLabel="Title">
+                                                    <rect key="frame" x="76" y="8" width="44.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="tYV-Vu-S9S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOa-mv-vjk" userLabel="Description">
+                                                    <rect key="frame" x="76" y="27" width="495.5" height="44"/>
+                                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sOa-mv-vjk" firstAttribute="top" secondItem="Dxz-cB-rd1" secondAttribute="bottom" constant="-2" id="67d-9e-1PS"/>
+                                                <constraint firstItem="L02-fS-AH7" firstAttribute="top" secondItem="5WN-OP-93K" secondAttribute="topMargin" id="A1Z-dC-ZM4"/>
+                                                <constraint firstItem="sOa-mv-vjk" firstAttribute="leading" secondItem="Dxz-cB-rd1" secondAttribute="leading" id="Gwy-hb-cEI"/>
+                                                <constraint firstItem="sOa-mv-vjk" firstAttribute="bottom" secondItem="L02-fS-AH7" secondAttribute="bottom" id="Q8K-5E-CbB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="L02-fS-AH7" secondAttribute="bottom" id="Upl-An-tCB"/>
+                                                <constraint firstItem="Dxz-cB-rd1" firstAttribute="leading" secondItem="L02-fS-AH7" secondAttribute="trailing" constant="8" id="WN0-qw-VFg"/>
+                                                <constraint firstItem="L02-fS-AH7" firstAttribute="leading" secondItem="5WN-OP-93K" secondAttribute="leadingMargin" id="iD1-kB-Qot"/>
+                                                <constraint firstItem="Dxz-cB-rd1" firstAttribute="top" secondItem="L02-fS-AH7" secondAttribute="top" id="yEc-hT-ZEf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d5Q-Fq-hc9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="85Y-kM-PcJ"/>
+                            <constraint firstItem="d5Q-Fq-hc9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="H9W-k6-l6y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d5Q-Fq-hc9" secondAttribute="bottom" id="Tbd-GY-lAb"/>
+                            <constraint firstAttribute="trailing" secondItem="d5Q-Fq-hc9" secondAttribute="trailing" id="ybD-uw-kkp"/>
+                        </constraints>
                     </view>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="116" y="259"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Earth" width="800" height="800"/>
+    </resources>
 </document>
