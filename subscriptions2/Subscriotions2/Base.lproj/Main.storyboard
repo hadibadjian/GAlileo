@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dqN-cb-mHj">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Config View Controller-->
+        <scene sceneID="Xh9-UZ-YDq">
+            <objects>
+                <viewController id="hBr-Il-k4g" customClass="ConfigViewController" customModule="Subscriotions2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sjg-Ek-GTI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xbi-F5-MR9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D7v-ST-Fcs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jzu-kD-InF">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCellIdentifier" id="y4T-N0-Tol" customClass="SwitchTableViewCell" customModule="Subscriotions2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y4T-N0-Tol" id="sOR-WU-DE4">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fX-GK-WxZ">
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="36"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byi-fS-BHj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="535" height="36"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="207-bs-KUK">
+                                                            <rect key="frame" x="535" y="0.0" width="51" height="36"/>
+                                                            <connections>
+                                                                <action selector="switchPressed:" destination="y4T-N0-Tol" eventType="valueChanged" id="iGG-q5-CMa"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1fX-GK-WxZ" firstAttribute="leading" secondItem="sOR-WU-DE4" secondAttribute="leadingMargin" id="7Ji-Ft-kRD"/>
+                                                <constraint firstItem="1fX-GK-WxZ" firstAttribute="trailing" secondItem="sOR-WU-DE4" secondAttribute="trailingMargin" id="WYT-x8-rPz"/>
+                                                <constraint firstItem="1fX-GK-WxZ" firstAttribute="bottom" secondItem="sOR-WU-DE4" secondAttribute="bottomMargin" id="hz1-tX-oa2"/>
+                                                <constraint firstItem="1fX-GK-WxZ" firstAttribute="top" secondItem="sOR-WU-DE4" secondAttribute="topMargin" constant="-8" id="uJi-1w-9uv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="enabledSwitch" destination="207-bs-KUK" id="mJu-4j-KPh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jzu-kD-InF" secondAttribute="trailing" id="6fy-yP-DJv"/>
+                            <constraint firstItem="Jzu-kD-InF" firstAttribute="leading" secondItem="D7v-ST-Fcs" secondAttribute="leading" id="Oa9-u5-hzT"/>
+                            <constraint firstItem="Xbi-F5-MR9" firstAttribute="top" secondItem="Jzu-kD-InF" secondAttribute="bottom" id="PQF-Tq-uKc"/>
+                            <constraint firstItem="Jzu-kD-InF" firstAttribute="top" secondItem="D7v-ST-Fcs" secondAttribute="top" constant="20" id="ut7-5O-bMr"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="cSp-K5-xyC"/>
+                    <connections>
+                        <outlet property="tableView" destination="Jzu-kD-InF" id="ozb-4u-4ni"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZM-AM-XgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="1071"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Subscriotions2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pC5-4L-Hpc">
+                                <rect key="frame" x="20" y="20" width="560" height="277"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNP-eS-y6u">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Subscription" translatesAutoresizingMaskIntoConstraints="NO" id="7I0-fS-5f9">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="200"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RA5-Hd-asK">
+                                        <rect key="frame" x="0.0" y="233" width="560" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Anual Subscription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPl-hL-7wh">
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEX-jY-Jyh">
+                                                <rect key="frame" x="506" y="0.0" width="54" height="30"/>
+                                                <state key="normal" title="$ 80.99"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mau-e0-ePV">
+                                        <rect key="frame" x="0.0" y="263" width="560" height="15"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pC5-4L-Hpc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NTt-jz-7Nc"/>
+                            <constraint firstItem="pC5-4L-Hpc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="V1g-hb-brV"/>
+                            <constraint firstItem="pC5-4L-Hpc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gKV-J4-Esg"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Main" id="clr-8q-gj9"/>
+                    <connections>
+                        <outlet property="subscriptionEntities" destination="RA5-Hd-asK" id="6mx-lK-UU0"/>
+                        <outlet property="subscriptionImage" destination="7I0-fS-5f9" id="aLw-rb-lJh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="324"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ocT-Cd-5we">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dqN-cb-mHj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="1x7-cs-y3l">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="PYo-vy-hZD"/>
+                        <segue destination="hBr-Il-k4g" kind="relationship" relationship="viewControllers" id="0mp-GQ-Ila"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rg-3O-osL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="324"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Subscription" width="200" height="200"/>
+    </resources>
+</document>
