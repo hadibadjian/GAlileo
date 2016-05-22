@@ -64,13 +64,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   // MARK: Planets
 
-  func initialisePlanets() {
+  private func initialisePlanets() {
     planets = []
 
-    let planetsDataPath = NSBundle.mainBundle().pathForResource("planets", ofType: "json")
-    let planetsData = NSData(contentsOfURL: NSURL(fileURLWithPath: planetsDataPath!))
+    let fileName = "planets"
+    let fileType = "json"
+
+    let fileManager = FileManager()
+
+    if !fileManager.fileExists(fileName, ofType: fileType) {
+      fileManager.copyFromBundle(fileName, ofType: fileType)
+    }
 
     do {
+      let planetsData = fileManager.contentOfFile(fileName, ofType: fileType)
+
       let planetsArray =
       try NSJSONSerialization.JSONObjectWithData(planetsData!, options: .AllowFragments) as? NSArray
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2701FCA21CF23F0700885A25 /* planets.json in Resources */ = {isa = PBXBuildFile; fileRef = 2701FCA11CF23F0700885A25 /* planets.json */; };
+		2701FCA41CF252B100885A25 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2701FCA31CF252B100885A25 /* FileManager.swift */; };
 		276754571CE9080C002C4BC7 /* FavoritePlanetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276754561CE9080C002C4BC7 /* FavoritePlanetCell.swift */; };
 		276754591CE90835002C4BC7 /* PlanetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276754581CE90835002C4BC7 /* PlanetCell.swift */; };
 		2767545B1CE90881002C4BC7 /* PlanetCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767545A1CE90881002C4BC7 /* PlanetCellType.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		2701FCA11CF23F0700885A25 /* planets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = planets.json; sourceTree = "<group>"; };
+		2701FCA31CF252B100885A25 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		276754561CE9080C002C4BC7 /* FavoritePlanetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePlanetCell.swift; sourceTree = "<group>"; };
 		276754581CE90835002C4BC7 /* PlanetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetCell.swift; sourceTree = "<group>"; };
 		2767545A1CE90881002C4BC7 /* PlanetCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetCellType.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				276754581CE90835002C4BC7 /* PlanetCell.swift */,
 				2767545A1CE90881002C4BC7 /* PlanetCellType.swift */,
 				2767545E1CE914A0002C4BC7 /* Planet.swift */,
+				2701FCA31CF252B100885A25 /* FileManager.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				2767545F1CE914A0002C4BC7 /* Planet.swift in Sources */,
 				27BE5F691CCF97BE008EB95E /* AppDelegate.swift in Sources */,
 				276754591CE90835002C4BC7 /* PlanetCell.swift in Sources */,
+				2701FCA41CF252B100885A25 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
