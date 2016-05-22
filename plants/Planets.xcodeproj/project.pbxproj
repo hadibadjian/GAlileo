@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2701FCA21CF23F0700885A25 /* planets.json in Resources */ = {isa = PBXBuildFile; fileRef = 2701FCA11CF23F0700885A25 /* planets.json */; };
 		276754571CE9080C002C4BC7 /* FavoritePlanetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276754561CE9080C002C4BC7 /* FavoritePlanetCell.swift */; };
 		276754591CE90835002C4BC7 /* PlanetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276754581CE90835002C4BC7 /* PlanetCell.swift */; };
 		2767545B1CE90881002C4BC7 /* PlanetCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2767545A1CE90881002C4BC7 /* PlanetCellType.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2701FCA11CF23F0700885A25 /* planets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = planets.json; sourceTree = "<group>"; };
 		276754561CE9080C002C4BC7 /* FavoritePlanetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePlanetCell.swift; sourceTree = "<group>"; };
 		276754581CE90835002C4BC7 /* PlanetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetCell.swift; sourceTree = "<group>"; };
 		2767545A1CE90881002C4BC7 /* PlanetCellType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetCellType.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		276754541CE90311002C4BC7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2701FCA11CF23F0700885A25 /* planets.json */,
 				27BE5F6C1CCF97BE008EB95E /* Main.storyboard */,
 				27BE5F6F1CCF97BE008EB95E /* Assets.xcassets */,
 				27BE5F711CCF97BE008EB95E /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 				27BE5F731CCF97BE008EB95E /* LaunchScreen.storyboard in Resources */,
 				27BE5F701CCF97BE008EB95E /* Assets.xcassets in Resources */,
 				27BE5F6E1CCF97BE008EB95E /* Main.storyboard in Resources */,
+				2701FCA21CF23F0700885A25 /* planets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
