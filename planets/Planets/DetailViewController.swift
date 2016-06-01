@@ -17,14 +17,21 @@ class DetailViewController: UIViewController {
     titleLabel.text = planet?.title
     descriptionTextView.text = planet?.desc
     iconImage.image = planet?.icon
+    toggleFavorite()
   }
 
   @IBAction func favoritePressed(sender: AnyObject) {
     planet?.favorite = !(planet?.favorite ?? false)
+    toggleFavorite()
+  }
 
+  private func toggleFavorite() {
     if let planet = planet {
       favoriteBarButtonItem.tintColor =
         planet.favorite ? UIColor.purpleColor() : UIColor.grayColor()
+
+      let favKey = String(format: formattedPlanetFavKey, planet.title ?? "-")
+      NSUserDefaults.standardUserDefaults().setBool(planet.favorite, forKey: favKey)
     }
   }
 }

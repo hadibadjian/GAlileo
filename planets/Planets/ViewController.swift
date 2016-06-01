@@ -2,6 +2,8 @@
 
 import UIKit
 
+let formattedPlanetFavKey = "%@Favorite"
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet weak var tableView: UITableView!
@@ -15,6 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+
+    setTitle()
     initialisePlanets()
 
     tableView.dataSource = self
@@ -64,6 +68,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   // MARK: Planets
 
+  private func setTitle() {
+    NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")
+
+    let infoPlistPath = NSBundle.mainBundle().pathForResource("Info", ofType: "plist")
+    let plist = NSDictionary(contentsOfFile: infoPlistPath!)
+
+    title = "Planets v" + String(plist!["CFBundleShortVersionString"]!)
+  }
+
   private func initialisePlanets() {
     planets = []
 
@@ -88,6 +101,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             title: planet["title"],
             desc: planet["desc"],
             icon: UIImage(named: planet["icon"]!))
+
+          let favKey = String(format: formattedPlanetFavKey, p.title ?? "-")
+          p.favorite = NSUserDefaults.standardUserDefaults().boolForKey(favKey)
+
           planets?.append(p)
         }
       }
