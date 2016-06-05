@@ -7,7 +7,7 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var favoriteBarButtonItem: UIBarButtonItem!
 
-  var planet: Planet?
+  var planet: PlanetEntity?
 
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
@@ -16,22 +16,21 @@ class DetailViewController: UIViewController {
 
     titleLabel.text = planet?.title
     descriptionTextView.text = planet?.desc
-    iconImage.image = planet?.icon
-    toggleFavorite()
+    iconImage.image = UIImage(named: planet?.icon ?? "Earth")
+    setFavoriteState()
   }
 
   @IBAction func favoritePressed(sender: AnyObject) {
-    planet?.favorite = !(planet?.favorite ?? false)
-    toggleFavorite()
+    if let planet = planet, favorite = planet.favorite as? Bool {
+      planet.favorite = NSNumber(bool: !favorite)
+    }
+    setFavoriteState()
   }
 
-  private func toggleFavorite() {
-    if let planet = planet {
+  private func setFavoriteState() {
+    if let favorite = planet?.favorite as? Bool {
       favoriteBarButtonItem.tintColor =
-        planet.favorite ? UIColor.purpleColor() : UIColor.grayColor()
-
-      let favKey = String(format: formattedPlanetFavKey, planet.title ?? "-")
-      NSUserDefaults.standardUserDefaults().setBool(planet.favorite, forKey: favKey)
+        favorite ? UIColor.purpleColor() : UIColor.grayColor()
     }
   }
 }

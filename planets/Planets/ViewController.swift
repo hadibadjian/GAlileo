@@ -1,14 +1,13 @@
 //  Copyright © 2016 HB. All rights reserved.
 
 import UIKit
-
-let formattedPlanetFavKey = "%@Favorite"
+import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet weak var tableView: UITableView!
 
-  private var planets: [Planet]?
+  private var planets: [PlanetEntity]?
 
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
@@ -45,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       if var cell = cell as? PlanetCellType {
         cell.title = planets?[indexPath.row].title
         cell.desc = planets?[indexPath.row].desc
-        cell.icon = planets?[indexPath.row].icon
+        cell.icon = UIImage(named: planets?[indexPath.row].icon ?? "Earth")
       }
 
       return cell!
@@ -60,7 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if let detailVC = segue.destinationViewController as? DetailViewController {
-      if let planet = sender as? Planet {
+      if let planet = sender as? PlanetEntity {
         detailVC.planet = planet
       }
     }
@@ -80,36 +79,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   private func initialisePlanets() {
     planets = []
 
-    let fileName = "planets"
-    let fileType = "json"
-
-    let fileManager = FileManager()
-
-    if !fileManager.fileExists(fileName, ofType: fileType) {
-      fileManager.copyFromBundle(fileName, ofType: fileType)
-    }
+    // swiftlint:disable force_cast
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let fetchRequest = NSFetchRequest(entityName: "PlanetEntity")
 
     do {
-      let planetsData = fileManager.contentOfFile(fileName, ofType: fileType)
-
-      let planetsArray =
-      try NSJSONSerialization.JSONObjectWithData(planetsData!, options: .AllowFragments) as? NSArray
-
-      for planet in planetsArray! {
-        if let planet = planet as? Dictionary<String, String> {
-          let p = Planet(
-            title: planet["title"],
-            desc: planet["desc"],
-            icon: UIImage(named: planet["icon"]!))
-
-          let favKey = String(format: formattedPlanetFavKey, p.title ?? "-")
-          p.favorite = NSUserDefaults.standardUserDefaults().boolForKey(favKey)
-
-          planets?.append(p)
-        }
+      if let storedPlanets =
+        try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest) as? [PlanetEntity] {
+          planets?.appendContentsOf(storedPlanets)
       }
     } catch {
-      print("Something went wrong!")
+      print("Something very bad went wrong")
     }
   }
 
