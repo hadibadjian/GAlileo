@@ -83,6 +83,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let fetchRequest = NSFetchRequest(entityName: "PlanetEntity")
 
+    fetchRequest.sortDescriptors?.append(NSSortDescriptor(key: "title", ascending: true))
+
     do {
       if let storedPlanets =
         try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest) as? [PlanetEntity] {
