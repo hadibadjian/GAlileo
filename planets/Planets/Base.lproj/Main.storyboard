@@ -28,20 +28,20 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k88-5v-u34" id="3H1-Ic-Z9T">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="145.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth" translatesAutoresizingMaskIntoConstraints="NO" id="497-5a-Loq" userLabel="Icon">
-                                                    <rect key="frame" x="301" y="8" width="291" height="129.5"/>
+                                                    <rect key="frame" x="301" y="8" width="291" height="130"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxT-tw-9f3" userLabel="Title">
-                                                    <rect key="frame" x="8" y="8" width="285" height="32.5"/>
+                                                    <rect key="frame" x="8" y="8" width="285" height="33"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNw-4D-5i1" userLabel="Description">
-                                                    <rect key="frame" x="8" y="48.5" width="285" height="89"/>
+                                                    <rect key="frame" x="8" y="49" width="285" height="89"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -77,7 +77,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                         <rect key="frame" x="0.0" y="238" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ws3-9s-nP7" id="5WN-OP-93K">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth" translatesAutoresizingMaskIntoConstraints="NO" id="L02-fS-AH7" userLabel="Icon">
@@ -87,7 +87,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxz-cB-rd1" userLabel="Title">
-                                                    <rect key="frame" x="76" y="8" width="44.5" height="21"/>
+                                                    <rect key="frame" x="76" y="8" width="45" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="tYV-Vu-S9S"/>
                                                     </constraints>
@@ -96,7 +96,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOa-mv-vjk" userLabel="Description">
-                                                    <rect key="frame" x="76" y="27" width="495.5" height="44"/>
+                                                    <rect key="frame" x="76" y="27" width="496" height="44"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -159,16 +159,16 @@ tempor incididunt ut labore et dolore magna aliqua.</string>
                                 <rect key="frame" x="20" y="72" width="560" height="520"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvm-2Q-yuD">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth" translatesAutoresizingMaskIntoConstraints="NO" id="mgD-cR-2Hr">
-                                        <rect key="frame" x="0.0" y="40.5" width="560" height="300"/>
+                                        <rect key="frame" x="0.0" y="40" width="560" height="300"/>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agn-Xd-Y8b">
-                                        <rect key="frame" x="0.0" y="348.5" width="560" height="171.5"/>
+                                        <rect key="frame" x="0.0" y="348" width="560" height="172"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -176,13 +176,18 @@ tempor incididunt ut labore et dolore magna aliqua.</string>
                                     </textView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YA6-Ac-VfL">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="YA6-Ac-VfL" firstAttribute="centerY" secondItem="uuq-3U-i6c" secondAttribute="centerY" id="4dw-7v-yTP"/>
                             <constraint firstItem="MUv-OO-qn1" firstAttribute="top" secondItem="m42-cS-ruo" secondAttribute="bottom" constant="8" id="SJc-Ng-UpC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MUv-OO-qn1" secondAttribute="trailing" id="VZd-rV-BYI"/>
                             <constraint firstItem="mgD-cR-2Hr" firstAttribute="height" secondItem="uuq-3U-i6c" secondAttribute="height" multiplier="1:2" id="g18-ZG-bZF"/>
                             <constraint firstAttribute="leadingMargin" secondItem="MUv-OO-qn1" secondAttribute="leading" id="hQm-mY-RSi"/>
+                            <constraint firstItem="YA6-Ac-VfL" firstAttribute="centerX" secondItem="uuq-3U-i6c" secondAttribute="centerX" id="qvl-iX-6ik"/>
                             <constraint firstItem="VKK-1i-J0w" firstAttribute="top" secondItem="MUv-OO-qn1" secondAttribute="bottom" constant="8" id="wTY-7p-HdI"/>
                         </constraints>
                     </view>
@@ -195,6 +200,7 @@ tempor incididunt ut labore et dolore magna aliqua.</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="YA6-Ac-VfL" id="9Gx-Jc-pJG"/>
                         <outlet property="descriptionTextView" destination="Agn-Xd-Y8b" id="YyP-gu-h9y"/>
                         <outlet property="favoriteBarButtonItem" destination="vyC-Gy-Tgz" id="7UX-jS-LJW"/>
                         <outlet property="iconImage" destination="mgD-cR-2Hr" id="0wN-Xa-bdb"/>

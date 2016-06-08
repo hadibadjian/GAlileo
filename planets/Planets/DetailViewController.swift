@@ -7,6 +7,7 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var descriptionTextView: UITextView!
   @IBOutlet weak var favoriteBarButtonItem: UIBarButtonItem!
 
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   var planet: PlanetEntity?
 
   override func viewWillAppear(animated: Bool) {
@@ -18,6 +19,14 @@ class DetailViewController: UIViewController {
     descriptionTextView.text = planet?.desc
     iconImage.image = UIImage(named: planet?.icon ?? "Earth")
     setFavoriteState()
+
+    activityIndicator.hidden = false
+    activityIndicator.startAnimating()
+    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(5 * Double(NSEC_PER_SEC)))
+    dispatch_after(delayTime, dispatch_get_main_queue()) { () -> Void in
+      self.activityIndicator.stopAnimating()
+      self.activityIndicator.hidden = true
+    }
   }
 
   @IBAction func favoritePressed(sender: AnyObject) {

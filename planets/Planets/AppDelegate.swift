@@ -27,7 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch response.result {
         case .Success:
           if let planets = response.result.value as? Array<Dictionary<String, String>> {
-            // update database
+            // delete data in storage
+            let fetchRequest = NSFetchRequest(entityName: "PlanetEntity")
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            do {
+              try self.managedObjectContext.executeRequest(deleteRequest)
+
+              // populate new data
+              self.createPlanets(planets)
+            } catch {
+              print("Failed to delete entites from storage")
+            }
           }
         case .Failure(let error):
           print(error)
@@ -157,20 +167,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let planetsArray =
       try NSJSONSerialization.JSONObjectWithData(planetsData!, options: .AllowFragments) as? NSArray
 
-      for planet in planetsArray! {
-        if let planet = planet as? Dictionary<String, String> {
-          // swiftlint:disable force_cast
-          let planetEntity = NSEntityDescription.insertNewObjectForEntityForName(
-            "PlanetEntity",
-            inManagedObjectContext: managedObjectContext) as! PlanetEntity
-          planetEntity.title = planet["title"]
-          planetEntity.desc  = planet["desc"]
-          planetEntity.icon  = planet["icon"]
-          planetEntity.favorite = false
-        }
-      }
+      createPlanets(planetsArray!)
     } catch {
       print("Something went wrong!")
+    }
+  }
+
+  private func createPlanets(planets: NSArray) {
+    for planet in planets {
+      if let planet = planet as? Dictionary<String, String> {
+        // swiftlint:disable force_cast
+        let planetEntity = NSEntityDescription.insertNewObjectForEntityForName(
+          "PlanetEntity",
+          inManagedObjectContext: managedObjectContext) as! PlanetEntity
+        planetEntity.title = planet["title"]
+        planetEntity.desc  = planet["desc"]
+        planetEntity.icon  = planet["icon"]
+        planetEntity.favorite = false
+      }
     }
   }
 }
