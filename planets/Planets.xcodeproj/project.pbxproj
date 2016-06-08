@@ -21,6 +21,7 @@
 		27BE5F6E1CCF97BE008EB95E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BE5F6C1CCF97BE008EB95E /* Main.storyboard */; };
 		27BE5F701CCF97BE008EB95E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BE5F6F1CCF97BE008EB95E /* Assets.xcassets */; };
 		27BE5F731CCF97BE008EB95E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BE5F711CCF97BE008EB95E /* LaunchScreen.storyboard */; };
+		7663E1535654E8278B094722 /* Pods_Planets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE652AF42932F0E26F88BB8E /* Pods_Planets.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		27BE5F6F1CCF97BE008EB95E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27BE5F721CCF97BE008EB95E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BE5F741CCF97BE008EB95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E68178F6D3E1BC2C464A57 /* Pods-Planets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planets.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planets/Pods-Planets.release.xcconfig"; sourceTree = "<group>"; };
+		BE652AF42932F0E26F88BB8E /* Pods_Planets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F960C749A8D2516215F6C8EB /* Pods-Planets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planets.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planets/Pods-Planets.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7663E1535654E8278B094722 /* Pods_Planets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +92,8 @@
 			children = (
 				27BE5F671CCF97BE008EB95E /* Planets */,
 				27BE5F661CCF97BE008EB95E /* Products */,
+				3C7626E66F367EC454EAFA5E /* Pods */,
+				FF8944AC07CA8EE28772CDD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +114,23 @@
 			path = Planets;
 			sourceTree = "<group>";
 		};
+		3C7626E66F367EC454EAFA5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F960C749A8D2516215F6C8EB /* Pods-Planets.debug.xcconfig */,
+				42E68178F6D3E1BC2C464A57 /* Pods-Planets.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF8944AC07CA8EE28772CDD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE652AF42932F0E26F88BB8E /* Pods_Planets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,10 +138,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27BE5F771CCF97BE008EB95E /* Build configuration list for PBXNativeTarget "Planets" */;
 			buildPhases = (
+				9690C28D8AEDDB6D9C9AC363 /* [CP] Check Pods Manifest.lock */,
 				27BE5F611CCF97BE008EB95E /* Sources */,
 				27BE5F621CCF97BE008EB95E /* Frameworks */,
 				27BE5F631CCF97BE008EB95E /* Resources */,
 				27BE5F7A1CCF9828008EB95E /* Swiftlint */,
+				0CA64E44F3D08A532C420642 /* [CP] Embed Pods Frameworks */,
+				E2E4440D52155D4B3D758C2D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,6 +203,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0CA64E44F3D08A532C420642 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planets/Pods-Planets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		27BE5F7A1CCF9828008EB95E /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,6 +231,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		9690C28D8AEDDB6D9C9AC363 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2E4440D52155D4B3D758C2D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planets/Pods-Planets-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -317,6 +389,7 @@
 		};
 		27BE5F781CCF97BE008EB95E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F960C749A8D2516215F6C8EB /* Pods-Planets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Planets/Info.plist;
@@ -328,6 +401,7 @@
 		};
 		27BE5F791CCF97BE008EB95E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42E68178F6D3E1BC2C464A57 /* Pods-Planets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Planets/Info.plist;

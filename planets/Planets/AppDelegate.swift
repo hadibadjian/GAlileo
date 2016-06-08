@@ -2,6 +2,7 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let _ = managedObjectContext
       initStoredPlanets()
       return true
+  }
+
+  func applicationDidBecomeActive(application: UIApplication) {
+    Alamofire.request(
+      .GET,
+      "https://raw.githubusercontent.com/hadibadjian/GAlileo/master/planets/Planets/planets.json",
+      parameters: nil)
+      .validate()
+      .responseJSON { response in
+        switch response.result {
+        case .Success:
+          if let planets = response.result.value as? Array<Dictionary<String, String>> {
+            // update database
+          }
+        case .Failure(let error):
+          print(error)
+        }
+    }
   }
 
   func applicationDidEnterBackground(application: UIApplication) {
